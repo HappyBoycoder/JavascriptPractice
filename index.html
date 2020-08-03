@@ -1,6 +1,8 @@
-<!--time in the following format.  Go to the editor
-Sample Output : Today is : Tuesday.
-Current time is : 10 PM : 30 : 38-->
+<!--Write a JavaScript function to print the contents of the current window.
+Expected Output :
+mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +11,27 @@ Current time is : 10 PM : 30 : 38-->
 </head>
 <body>
 
-    <P id="demo"></P>
-    <P id="demo2"></P>
-
-
+    <p id="demo"></p>
 
 </body>
 <script>
 
-timer();
 
- function timer() {
-    var d = new Date()
-    var weekDay = new Array(7);
-    
-    weekDay[0] = "Sunday";
-    weekDay[1] = "Monday";
-    weekDay[2] = "Tuesday";
-    weekDay[3] = "Wednesday";
-    weekDay[4] = "Thursday";
-    weekDay[5] = "Friday";
-    weekDay[6] = "Saturday";
-    
-    var display = weekDay[d.getDay()];
-    var display2 = new Date(new Date().getTime() + 8*60*60*1000).toLocaleTimeString();
-   
-    
-    
-    document.getElementById("demo").innerHTML ="Today is: " + display ;
-    document.getElementById("demo2").innerHTML ="Today is: " + display2 ;
-    setTimeout(timer,1000);
-
-}
-
+         
+        var today = new Date(); 
+        var dd = today.getDate(); 
+        var mm = today.getMonth() + 1; 
+  
+        var yyyy = today.getFullYear(); 
+        if (dd < 10) { 
+            dd = '0' + dd; 
+        } 
+        if (mm < 10) { 
+            mm = '0' + mm; 
+        } 
+        var today = dd + '/' + mm + '/' + yyyy; 
+        
+        var display = document.getElementById("demo").innerHTML = "dd/mm/yyy: " + today;
 
         </script>
 
