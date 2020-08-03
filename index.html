@@ -10,12 +10,17 @@ Current time is : 10 PM : 30 : 38-->
 <body>
 
     <P id="demo"></P>
+    <P id="demo2"></P>
+
 
 
 </body>
 <script>
 
-    var d = new Date();
+timer();
+
+ function timer() {
+    var d = new Date()
     var weekDay = new Array(7);
     
     weekDay[0] = "Sunday";
@@ -27,12 +32,17 @@ Current time is : 10 PM : 30 : 38-->
     weekDay[6] = "Saturday";
     
     var display = weekDay[d.getDay()];
+    var display2 = new Date(new Date().getTime() + 8*60*60*1000).toLocaleTimeString();
+   
     
     
-    
-    
-    document.getElementById("demo").innerHTML ="Today is:" + display ;
-    
+    document.getElementById("demo").innerHTML ="Today is: " + display ;
+    document.getElementById("demo2").innerHTML ="Today is: " + display2 ;
+    setTimeout(timer,1000);
+
+}
+
+
         </script>
 
 
